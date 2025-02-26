@@ -6,6 +6,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 const apiKey = 'AIzaSyBnwtYHw5NBa03bcyXZL9KxBulZcF3MaGE';
 void main() {
   runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {

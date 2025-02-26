@@ -14,8 +14,10 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
-
+  final model = GenerativeModel(
+      model: 'gemini-1.5-flash-latest',
+      apiKey: apiKey,
+  );
   TextEditingController messageController = TextEditingController();
 
   bool isLoading = false;
@@ -174,7 +176,7 @@ class _ChatPageState extends State<ChatPage> {
                       // Kirim teks yang sudah disimpan ke model AI
                       final content = [Content.text(messageText)];
                       final GenerateContentResponse responseAI =
-                          await model.generateContent(content);
+                        await model.generateContent(content);
 
                       // Hapus bubble "Typing..." dan tambahkan respons AI
                       chatBubbles.removeLast();
